@@ -39,12 +39,13 @@
             // 
             // Head
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 283);
             this.Name = "Head";
             this.Text = "Head";
             this.Load += new System.EventHandler(this.Head_Load);
+            this.Shown += new System.EventHandler(this.Head_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Head_KeyDown);
             this.ResumeLayout(false);
 

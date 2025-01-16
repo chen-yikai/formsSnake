@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -12,12 +13,10 @@ namespace formsSnake
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Head head = new Head();
-            head.Show();
-
-            this.BackColor = Color.MediumPurple;
-            this.Width = 200;
-            this.Height = 200;
+            this.IsMdiContainer = true;
+            this.BackColor = Color.LightSkyBlue;
+            this.Width = 150;
+            this.Height = 150;
             this.FormBorderStyle = FormBorderStyle.None;
             this.TopMost = true;
 
@@ -34,9 +33,13 @@ namespace formsSnake
             length.Text = "0";
             this.Controls.Add(length);
 
+            //List<Body> bodies = new List<Body>();
             Share.lengthChange += () =>
             {
                 length.Text = Share.bodyLength.ToString();
+
+                Body body = new Body(Share.bodyLength);
+                body.Show();
             };
             Share.gameOvered += () =>
             {
@@ -52,6 +55,8 @@ namespace formsSnake
 
                 Application.Exit();
             };
+            Head head = new Head();
+            head.Show();
         }
     }
 }

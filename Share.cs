@@ -19,7 +19,7 @@ namespace formsSnake
         public static event Action lengthChange;
         public static event Action gameOvered;
         public static int moveLength = 150;
-        public static int moveSpeed = 500;
+        public static int moveSpeed = 450;
         private static int _bodyLength = 0;
         public static int bodyLength
         {
@@ -44,15 +44,10 @@ namespace formsSnake
         {
             gameOvered?.Invoke();
         }
-        public static void setPos(int index, int x, int y)
+        public static void setPos(int x, int y)
         {
-            if (_snakePos.Count <= index)
-            {
-                _snakePos.Add(new Target(x, y));
-                SnakeMove?.Invoke();
-                return;
-            }
-            _snakePos[index] = new Target(x, y);
+            _snakePos.Add(new Target(x, y));
+            if (_snakePos.Count > bodyLength) _snakePos.RemoveAt(0);
             SnakeMove?.Invoke();
         }
     }

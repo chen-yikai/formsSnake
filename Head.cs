@@ -6,7 +6,7 @@ namespace formsSnake
 {
     public partial class Head : Form
     {
-        public string direction = "";
+        public string direction = "right";
         Food food = new Food();
         public Head()
         {
@@ -20,13 +20,32 @@ namespace formsSnake
             this.Height = Share.moveLength;
             this.Location = new Point(0, 0);
             this.TopMost = true;
+
+            Label indexShow = new Label();
+            indexShow.Font = new Font("Arial", 30, FontStyle.Bold);
+            indexShow.Location = new Point(0, 0);
+            indexShow.AutoSize = false;
+            indexShow.Width = this.Width;
+            indexShow.Height = this.Height;
+            indexShow.TextAlign = ContentAlignment.MiddleCenter;
+            //indexShow.Text = index.ToString();
+            indexShow.BorderStyle = BorderStyle.FixedSingle;
+            this.Controls.Add(indexShow);
+            this.BackColor = Color.LightGreen;
             headTimer.Interval = Share.moveSpeed;
             headTimer.Start();
             food.Show();
             this.Focus();
+
+            Share.gameOvered += () =>
+            {
+                headTimer.Stop();
+            };
         }
         private void headTimer_Tick(object sender, EventArgs e)
         {
+            Share.setPos(this.Location.X, this.Location.Y);
+
             Rectangle screen = Screen.PrimaryScreen.WorkingArea;
             switch (direction)
             {
@@ -43,14 +62,13 @@ namespace formsSnake
                     this.Top += Share.moveLength;
                     break;
             }
-            formsSnake.Share.setPos(0, this.Location.X, this.Location.Y);
             if (this.Bounds.IntersectsWith(food.Bounds))
             {
                 food.Hide();
                 food = new Food();
                 food.Show();
+                Share.bodyLength++;
                 this.Focus();
-                formsSnake.Share.bodyLength++;
             }
             if (this.Location.X < 0 || this.Location.Y < 0 || this.Location.X > screen.Width || this.Location.Y > screen.Height)
             {
@@ -80,5 +98,13 @@ namespace formsSnake
                     break;
             }
         }
+
+        private void Head_Shown(object sender, EventArgs e)
+        {
+            headTimer.Start();
+            this.Focus();
+        }
+
+       
     }
 }
