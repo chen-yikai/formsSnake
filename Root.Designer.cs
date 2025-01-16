@@ -1,6 +1,6 @@
 ﻿namespace formsSnake
 {
-    partial class Form1
+    partial class Root
     {
         /// <summary>
         /// 設計工具所需的變數。

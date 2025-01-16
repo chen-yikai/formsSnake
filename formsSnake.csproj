@@ -58,11 +58,11 @@
     <Compile Include="Food.Designer.cs">
       <DependentUpon>Food.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Root.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Root.Designer.cs">
+      <DependentUpon>Root.cs</DependentUpon>
     </Compile>
     <Compile Include="Head.cs">
       <SubType>Form</SubType>
@@ -79,8 +79,8 @@
     <EmbeddedResource Include="Food.resx">
       <DependentUpon>Food.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Root.resx">
+      <DependentUpon>Root.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Head.resx">
       <DependentUpon>Head.cs</DependentUpon>
