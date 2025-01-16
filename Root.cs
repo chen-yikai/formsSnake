@@ -33,7 +33,6 @@ namespace formsSnake
             length.Text = "0";
             this.Controls.Add(length);
 
-            //List<Body> bodies = new List<Body>();
             Share.lengthChange += () =>
             {
                 length.Text = Share.bodyLength.ToString();
@@ -43,7 +42,7 @@ namespace formsSnake
             };
             Share.gameOvered += () =>
             {
-                var result = MessageBox.Show("<Game Over> QQ", "Game Over", MessageBoxButtons.RetryCancel, MessageBoxIcon.Stop);
+                var result = MessageBox.Show("<Game Over> QQ \nTry again?", "Game Over", MessageBoxButtons.RetryCancel, MessageBoxIcon.Stop);
                 if (result == DialogResult.Retry)
                 {
                     Application.Restart();

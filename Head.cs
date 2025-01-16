@@ -8,10 +8,12 @@ namespace formsSnake
     {
         public string direction = "right";
         Food food = new Food();
+        Label indexShow = new Label();
         public Head()
         {
             InitializeComponent();
         }
+
 
         private void Head_Load(object sender, EventArgs e)
         {
@@ -21,14 +23,13 @@ namespace formsSnake
             this.Location = new Point(0, 0);
             this.TopMost = true;
 
-            Label indexShow = new Label();
-            indexShow.Font = new Font("Arial", 30, FontStyle.Bold);
+            indexShow.Font = new Font("Arial", 20, FontStyle.Bold);
             indexShow.Location = new Point(0, 0);
             indexShow.AutoSize = false;
             indexShow.Width = this.Width;
             indexShow.Height = this.Height;
             indexShow.TextAlign = ContentAlignment.MiddleCenter;
-            //indexShow.Text = index.ToString();
+            indexShow.Text = "";
             indexShow.BorderStyle = BorderStyle.FixedSingle;
             this.Controls.Add(indexShow);
             this.BackColor = Color.LightGreen;
@@ -41,6 +42,7 @@ namespace formsSnake
             {
                 headTimer.Stop();
             };
+
         }
         private void headTimer_Tick(object sender, EventArgs e)
         {
@@ -96,15 +98,40 @@ namespace formsSnake
                 case Keys.Q:
                     Share.GameOver();
                     break;
+                case Keys.P:
+                    if (headTimer.Enabled)
+                    {
+                        indexShow.Text = "Pause";
+                        headTimer.Stop();
+                    }
+                    else
+                    {
+                        indexShow.Text = "";
+                        headTimer.Start();
+                    }
+                    break;
             }
         }
 
         private void Head_Shown(object sender, EventArgs e)
         {
             headTimer.Start();
+            indexShow.Text = "";
             this.Focus();
+            this.Deactivate += Head_deactivate;
         }
 
-       
+        private void Head_deactivate(object sender, EventArgs e)
+        {
+            headTimer.Stop();
+            indexShow.Text = "Pause";
+            this.Activated += Head_activated;
+        }
+        private void Head_activated(object sender, EventArgs e)
+        {
+            headTimer.Start();
+            indexShow.Text = "";
+            this.Activated -= Head_activated;
+        }
     }
 }
