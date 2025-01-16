@@ -42,17 +42,19 @@ namespace formsSnake
             };
             Share.gameOvered += () =>
             {
-                var result = MessageBox.Show("<Game Over> QQ \nTry again?", "Game Over", MessageBoxButtons.RetryCancel, MessageBoxIcon.Stop);
-                if (result == DialogResult.Retry)
-                {
-                    Application.Restart();
-                }
-                else
-                {
-                    Application.Exit();
-                }
+                GameOverDialog gameOverDialog = new GameOverDialog();
+                gameOverDialog.Show();
+                //var result = MessageBox.Show("<Game Over> QQ \nTry again?", "Game Over", MessageBoxButtons.RetryCancel, MessageBoxIcon.Stop);
+                //if (result == DialogResult.Retry)
+                //{
+                //    Application.Restart();
+                //}
+                //else
+                //{
+                //    Application.Exit();
+                //}
 
-                Application.Exit();
+                //Application.Exit();
             };
             Head head = new Head();
             head.Show();

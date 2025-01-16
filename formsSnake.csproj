@@ -58,6 +58,12 @@
     <Compile Include="Food.Designer.cs">
       <DependentUpon>Food.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameOverDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameOverDialog.Designer.cs">
+      <DependentUpon>GameOverDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Root.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Food.resx">
       <DependentUpon>Food.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameOverDialog.resx">
+      <DependentUpon>GameOverDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Root.resx">
       <DependentUpon>Root.cs</DependentUpon>
