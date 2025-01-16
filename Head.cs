@@ -13,8 +13,6 @@ namespace formsSnake
         {
             InitializeComponent();
         }
-
-
         private void Head_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
@@ -42,7 +40,6 @@ namespace formsSnake
             {
                 headTimer.Stop();
             };
-
         }
         private void headTimer_Tick(object sender, EventArgs e)
         {

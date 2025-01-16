@@ -35,7 +35,16 @@ namespace formsSnake
             Share.SnakeMove += () =>
             {
                 var thisIndex = Share.snakePos.Count - index;
-                this.Location = new Point(Share.snakePos[thisIndex].x, Share.snakePos[thisIndex].y);
+                var headIndex = Share.snakePos.Count - 1;
+                if (this.Bounds.IntersectsWith(new Rectangle(Share.snakePos[headIndex].x, Share.snakePos[headIndex].y, 1, 1)))
+                {
+                    Share.GameOver();
+                }
+                else
+                {
+                    this.Location = new Point(Share.snakePos[thisIndex].x, Share.snakePos[thisIndex].y);
+                }
+
             };
         }
     }
