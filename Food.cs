@@ -18,6 +18,7 @@ namespace formsSnake
             this.Width = Share.moveLength;
             this.Height = Share.moveLength;
             this.TopMost = true;
+            this.Location = new Point(-Share.moveLength, -Share.moveLength);
             int x, y;
             Rectangle screen = Screen.PrimaryScreen.WorkingArea;
             while (true)

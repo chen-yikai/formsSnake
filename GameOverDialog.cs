@@ -16,16 +16,16 @@ namespace formsSnake
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.TopMost = true;
         }
-
-        private void againBtn_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
-        }
-
         private void exitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void goHome_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

@@ -21,7 +21,15 @@ namespace formsSnake
             this.TopMost = true;
 
             Rectangle screen = Screen.PrimaryScreen.WorkingArea;
-            this.Location = new Point(screen.Width - this.Width, screen.Height - this.Height);
+
+            if (Properties.Settings.Default.showLength)
+            {
+                this.Location = new Point(screen.Width - this.Width, screen.Height - this.Height);
+            }
+            else
+            {
+                this.Location = new Point(-this.Width, -this.Height);
+            }
 
             Label length = new Label();
             length.Font = new Font("Arial", 30, FontStyle.Bold);
@@ -44,17 +52,6 @@ namespace formsSnake
             {
                 GameOverDialog gameOverDialog = new GameOverDialog();
                 gameOverDialog.Show();
-                //var result = MessageBox.Show("<Game Over> QQ \nTry again?", "Game Over", MessageBoxButtons.RetryCancel, MessageBoxIcon.Stop);
-                //if (result == DialogResult.Retry)
-                //{
-                //    Application.Restart();
-                //}
-                //else
-                //{
-                //    Application.Exit();
-                //}
-
-                //Application.Exit();
             };
             Head head = new Head();
             head.Show();

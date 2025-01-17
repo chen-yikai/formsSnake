@@ -44,7 +44,6 @@ namespace formsSnake
                 {
                     this.Location = new Point(Share.snakePos[thisIndex].x, Share.snakePos[thisIndex].y);
                 }
-
             };
         }
     }

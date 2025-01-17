@@ -16,7 +16,7 @@ namespace formsSnake
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Root());
+            Application.Run(new Entry());
         }
     }
 }
