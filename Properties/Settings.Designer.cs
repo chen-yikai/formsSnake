@@ -49,13 +49,25 @@ namespace formsSnake.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("400")]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
         public int speed {
             get {
                 return ((int)(this["speed"]));
             }
             set {
                 this["speed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int moveLength {
+            get {
+                return ((int)(this["moveLength"]));
+            }
+            set {
+                this["moveLength"] = value;
             }
         }
     }

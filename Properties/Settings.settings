@@ -9,7 +9,10 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="speed" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">400</Value>
+      <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="moveLength" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
     </Setting>
   </Settings>
 </SettingsFile>

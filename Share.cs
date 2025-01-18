@@ -18,10 +18,9 @@ namespace formsSnake
         public static event Action SnakeMove;
         public static event Action lengthChange;
         public static event Action gameOvered;
-        public static event Action playAgain;
-        public static int moveLength = 100;
+        public static int moveLength = Properties.Settings.Default.moveLength;
         public static int moveSpeed = Properties.Settings.Default.speed;
-        private static int _bodyLength = 0;
+        private static int _bodyLength = 1;
         public static int bodyLength
         {
             get => _bodyLength;
@@ -44,10 +43,6 @@ namespace formsSnake
         public static void GameOver()
         {
             gameOvered?.Invoke();
-        }
-        public static void PlayAgain()
-        {
-            playAgain?.Invoke();
         }
         public static void clearPos()
         {

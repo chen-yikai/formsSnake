@@ -37,10 +37,6 @@ namespace formsSnake
             food.Show();
             this.Focus();
 
-            Share.playAgain += () =>
-            {
-                this.Close();
-            };
             Share.gameOvered += () =>
             {
                 headTimer.Stop();
@@ -126,15 +122,19 @@ namespace formsSnake
                 case Keys.Q:
                     Share.GameOver();
                     break;
+                case Keys.M:
+                    Manual manual = new Manual();
+                    manual.Show();
+                    break;
                 case Keys.P:
                     if (headTimer.Enabled)
                     {
-                        indexShow.Text = "Pause";
+                        indexShow.BackColor = Color.Yellow;
                         headTimer.Stop();
                     }
                     else
                     {
-                        indexShow.Text = "";
+                        indexShow.BackColor = Color.LightGreen;
                         headTimer.Start();
                     }
                     break;
@@ -144,7 +144,7 @@ namespace formsSnake
         private void Head_Shown(object sender, EventArgs e)
         {
             headTimer.Start();
-            indexShow.Text = "";
+            indexShow.BackColor = Color.LightGreen;
             this.Focus();
             this.Deactivate += Head_deactivate;
         }
@@ -152,13 +152,13 @@ namespace formsSnake
         private void Head_deactivate(object sender, EventArgs e)
         {
             headTimer.Stop();
-            indexShow.Text = "Pause";
+            indexShow.BackColor = Color.Yellow;
             this.Activated += Head_activated;
         }
         private void Head_activated(object sender, EventArgs e)
         {
             headTimer.Start();
-            indexShow.Text = "";
+            indexShow.BackColor = Color.LightGreen;
             this.Activated -= Head_activated;
         }
     }

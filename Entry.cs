@@ -45,13 +45,7 @@ namespace formsSnake
 
         private void Entry_Load(object sender, EventArgs e)
         {
-            Share.playAgain += () =>
-            {
-                Root root = new Root();
-                root = new Root();
-                root.Show();
-                this.Hide();
-            };
+           
         }
     }
 }
