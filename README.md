@@ -6,4 +6,4 @@
 - press q to end the game
 - press p or unfocus the green box to pause the game
 -  press p or focus the green box again to resume the game
--  press ? to show this window
+-  press ? to show the manual window
