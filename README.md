@@ -2,7 +2,7 @@
 ![2025-01-18_14-56](https://github.com/user-attachments/assets/e41a9294-cbeb-4d1a-882a-1fc518fff9c0)
 
 # Setup
-open the `formsSnake.sln` file with visual studio(with `.NET desktop development` installed)
+open the `formsSnake.sln` file with visual studio(has `.NET desktop development` installed)
 # How to play 🕹️
 - Use Arrow keys to control the snake
 - press q to end the game
